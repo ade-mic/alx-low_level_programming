@@ -5,6 +5,6 @@
 */
 int main(void)
 {
-  printf("Alx-africa");
+  printf("Holberton School");
   return (0);
 }
