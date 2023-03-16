@@ -1,11 +1,14 @@
 #include <stdio.h>
-/* prints Programing is funr
-* to the standard output
-*/
-int main (void)
+/*
+ * main - Entry point
+ * Return: Always 0 (success)
+ * prints Programing is funr
+ * to the standard output
+ */
+int main(void)
 {
-	/* string init */
-  char mystr[] = "\"Programming is like building a multilingual puzzle";
-  puts(mystr);
-  return (0);
+/* string init */
+char mystr[] = "\"Programming is like building a multilingual puzzle";
+puts(mystr);
+return (0);
 }
