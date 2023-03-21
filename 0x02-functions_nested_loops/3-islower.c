@@ -1,29 +1,15 @@
-#include <stdio.h>
-void print_alphabet_x10(void);
-/**
- * main - Program Entrance
- * Return: Always return a value of 0 if successful
- */
-int main(void)
-{
-	print_alphabet_x10();
-	return (0);
-}
+#include <ctype.h>
 
 /**
- * print_alphabet - print the alphabet in lower case
- * Return: void
+ * _islower - check for lower case character
+ * @c: the character to check
+ * Return: 1 if c is lowercase
+ * otherwise 0
  */
-void print_alphabet_x10(void)
+int _islower(int c)
 {
-	char alpha;
-	int i;
-	for (i = 0; i < 10; i++)
-		{
-			for (alpha = 'a'; alpha <= 'z'; alpha++)
-			{
-				putchar(alpha);
-			}
-			putchar('\n');
-		}
+	if (islower(c) != 0)
+		return (1);
+	else
+		return (0);
 }
