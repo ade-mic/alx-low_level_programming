@@ -1,0 +1,12 @@
+#include "main.h"
+#include <stdlib.h>
+/**
+ * add - add 2 inegers
+ * Return: the result of the addition
+ */
+int add(int, int)
+{
+	int i, j;
+
+	return ( i + j);
+}
