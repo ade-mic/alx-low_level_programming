@@ -1,0 +1,9 @@
+/**
+ * main - Program Entrance
+ * Return: Always return a value of 0 if successful
+ */
+int main()
+{
+	printf("_putchar \n");
+	return(0);
+}
