@@ -1,0 +1,29 @@
+#include <stdio.h>
+int _islower(int c);
+/**
+ * main - Program Entrance
+ * Return: Always return a value of 0 if successful
+ */
+int main(void)
+{
+	print_alphabet_x10();
+	return (0);
+}
+
+/**
+ * _islower - check if character is lowercase
+ * Return: int 1 if c is lowercase
+ */
+int _islower(int c)
+{
+	char c;
+	if 
+	for (i = 0; i < 10; i++)
+		{
+			for (alpha = 'a'; alpha <= 'z'; alpha++)
+			{
+				putchar(alpha);
+			}
+			putchar('\n');
+		}
+}
