@@ -1,0 +1,48 @@
+#include "main.h"
+#include <stdio.h>
+void print(long i);
+/**
+ * print_to_98 - print all natural number between n to 98
+ *@n: starting value
+ *
+ * Return: void
+ *
+ */
+void print_to_98(int n)
+{
+	while(n < 98 || n> 98)
+	{
+		print(n);
+		if (n > 98)
+			n--;
+		else
+			n++;
+		_putchar(',');
+		_putchar(' ');
+	}
+	print(98);
+	_putchar('\n');
+}
+/**
+ * print - recursively print input
+ *@i: value to be printed
+ *
+ * Return: void
+ *
+ */
+
+void print(long i)
+{
+	/* If number is smaller than 0, put a sign */
+	/* and change number to positive */
+	if (i < 0)
+	{
+		_putchar('-');
+		i = -i;
+	}
+		/* Remove the last digit aand recur */
+	if (i / 10)
+		print(i / 10);
+	/* Print the last digit */
+	_putchar(i % 10 + '0');
+}
