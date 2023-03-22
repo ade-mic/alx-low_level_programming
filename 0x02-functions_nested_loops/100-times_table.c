@@ -19,7 +19,7 @@ void print_times_table(int n)
 			for (j = 0; j <= n; j++)
 			{
 				val = i * j;
-				if (val < 10)
+				if (val < 10 && j > 0)
 				{
 					_putchar(' ');
 					_putchar(' ');
