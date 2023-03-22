@@ -1,6 +1,19 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
 void print(long i);
+void natural_numbers(void);
+/**
+ * main - program entrance
+ *
+ *
+ * Return: 0 on success
+ *
+ */
+int main()
+{
+	natural_numbers();
+	return (0);
+}
 /**
  * natural_numbers - print sum of natural numbers below 1024
  *
@@ -8,6 +21,7 @@ void print(long i);
  * Return: void
  *
  */
+
 void natural_numbers(void)
 {
 	int sum, i;
