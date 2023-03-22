@@ -9,7 +9,7 @@ void natural_numbers(void);
  * Return: 0 on success
  *
  */
-int main()
+int main(void)
 {
 	natural_numbers();
 	return (0);
