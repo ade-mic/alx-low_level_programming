@@ -1,7 +1,7 @@
 #include <ctype.h>
 
 /**
- * _isupper - checks for uppercase character
+ * _isdigit - checks if digit
  *
  * @c: character check
  * Return: 1 if c uppercase
