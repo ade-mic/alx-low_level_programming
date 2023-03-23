@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-void print(long i);
+void print(long);
 void fibonacci_50(void);
 /**
  * main - program entrance
@@ -24,18 +24,22 @@ int main(void)
 
 void fibonacci_50(void)
 {
-	int i, j;
+	int n;
+	long fn1, fn2, fn;
 
-	i = 1;
-	for (j = 0; j < 50; j++)
+	fn1 = 1;
+	fn2 = 2;
+	for (n = 0; n < 50; n++)
 	{
-		i += j;
-		print(i);
-		if (j < 49)
+		print(fn1);
+		if (n < 49)
 		{
 			_putchar(',');
 			_putchar(' ');
 		}
+		fn = fn1 + fn2;
+		fn1 = fn2;
+		fn2 = fn;
 	}
 	_putchar('\n');
 }
