@@ -19,7 +19,7 @@ void print_rev(char *s)
 	i = strlen(new_s);
 	while (i >= 0)
 	{
-		printf("%c \n", new_s[i]);
+		printf("%c", new_s[i]);
 		i--;
 	}
 }
