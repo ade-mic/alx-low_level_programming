@@ -13,14 +13,11 @@
 void print_rev(char *s)
 {
 	int i;
-	char *new_s;
 
-	new_s = s;
-	i = strlen(new_s);
-	while (i >= 0)
+	while(i >= 0)
 	{
-		printf("%c", new_s[i]);
+		printf("%c", s[i]);
 		i--;
 	}
-	putchar('\n');
+	putchar ('\n');
 }
