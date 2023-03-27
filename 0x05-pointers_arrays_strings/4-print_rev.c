@@ -16,10 +16,11 @@ void print_rev(char *s)
 	char *new_s;
 
 	new_s = s;
-	i = strlen(new_s);
+	i = strlen(new_s) - 1;
 	while (i >= 0)
 	{
 		printf("%c", new_s[i]);
 		i--;
 	}
+	printf("\n");
 }
