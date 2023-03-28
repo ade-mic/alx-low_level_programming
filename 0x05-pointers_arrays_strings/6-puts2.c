@@ -22,7 +22,7 @@ void puts2(char *s)
 	k = len - 1;
 	while (i <= k)
 	{
-		if(i % 2 == 0)
+		if (i % 2 == 0)
 			_putchar(tmp[i]);
 		i++;
 	}
