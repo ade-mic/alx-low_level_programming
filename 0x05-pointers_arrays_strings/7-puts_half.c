@@ -17,7 +17,7 @@ void puts_half(char *s)
 
 	len = strlen(s);
 	tmp = s;
-	k = len - 1;
+	k = len;
 	i = k / 2;
 	while (i < k)
 	{
