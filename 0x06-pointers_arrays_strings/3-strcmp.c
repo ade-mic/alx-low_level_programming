@@ -1,0 +1,19 @@
+#include "main.h"
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * _strcmp - function compares two string
+ *
+ * @s1: string 1
+ * @s2: string2
+ *
+ * Return: return 3 different vaues after comparison of the two stings
+ */
+
+int _strcmp(char *s1, char *s2)
+{
+	int tmp = strcmp(s1, s2);
+
+	return (tmp);
+}
