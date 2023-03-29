@@ -1,0 +1,1 @@
+Exercise on Pointers and how to use them
