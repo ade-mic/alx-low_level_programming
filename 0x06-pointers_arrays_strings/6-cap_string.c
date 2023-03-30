@@ -20,6 +20,8 @@ char *cap_string(char *s)
 	tmp = s;
 	len = strlen(s);
 
+	if (isalpha(tmp[0]))
+		tmp[0] = toupper(tmp[0]);
 	for (i = 0; i < len; i++)
 	{
 		if (isspace(tmp[i]) || tmp[i] == ',' || tmp[i] == ';')
