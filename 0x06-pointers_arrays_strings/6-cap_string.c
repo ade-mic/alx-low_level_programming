@@ -22,11 +22,11 @@ char *cap_string(char *s)
 
 	for (i = 0; i < len; i++)
 	{
-		if (isspace(tmp[i]) || tmp[i] == ',' || tmp[i] == ';'	\
-		    || tmp[i] == '.' || tmp[i] == '!' || tmp[i] == '?' || \
-		    tmp[i] == '"' || tmp[i] == '(' || tmp[i] == ')' || \
+		if (isspace(tmp[i]) || tmp[i] == ',' || tmp[i] == ';'  || \
+		    tmp[i] == '.' || tmp[i] == '!' || tmp[i] == '?' ||	\
+		    tmp[i] == '"' || tmp[i] == '(' || tmp[i] == ')' ||  \
 		    tmp[i] == '{' || tmp[i] == '}' || tmp[i] == ' ')
 			tmp[i + 1] = toupper(tmp[i + 1]);
 	}
-	return tmp;
+	return (tmp);
 }
