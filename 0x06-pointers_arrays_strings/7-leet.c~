@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+/**
+ * *leet - encode a string into 1337
+ *
+ * @s: string
+ *
+ *
+ * Return: capitalize sting every word
+ */
+
+char *leet(char *s)
+{
+	int i, j, k ;
+	char *temp;
+
+	char letters[13] = {'a', 'e', 'o', 't', 'l', 'A', 'E', 'O', 'T', 'L'};
+	int digit[13]  = {4, 3, 0, 7, 1, 4, 3, 0, 7, 1,4};
+	temp = s;
+	k = strlen(s);
+
+	for (i = 0; i < k; i++)
+	{
+		for (j = 0; j < 11; j++)
+		{
+			if (temp[i] == letters[j])
+				temp[i] = digit[j] + '0'';
+		}
+	}
+	return (temp);
+}
