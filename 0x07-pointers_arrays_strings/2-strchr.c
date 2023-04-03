@@ -24,6 +24,5 @@ char *_strchr(char *s, char c)
 			return (p);
 		}
 	}
-	p = &s[len];
-	return (p);
+	return (NULL);
 }
