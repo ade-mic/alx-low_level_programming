@@ -4,7 +4,7 @@
 /**
  * *_memset - a function that fills a memory with a constant bytes
  *
- * @s starting address of the memory to be filled
+ * @s: starting address of the memory to be filled
  * @b: character to be filled
  * @n: The size of the character
  *
