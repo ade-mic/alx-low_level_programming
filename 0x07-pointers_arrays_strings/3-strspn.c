@@ -19,16 +19,19 @@ unsigned int _strspn(char *s, char *accept)
 	len_s = strlen(s);
 	nbyte = 0;
 	len_accept = strlen(accept);
-	for (i = 0; i <= len_accept; i++)
+	for (i = 0; i < len_s; i++)
 	{
-		for (j =  0; j <= len_s; j++)
+		for (j =  0; j < len_accept; j++)
 		{
-			if (accept[i] == s[j])
+			if (s[i] == accept[j])
 			{
 				break;
 			}
 		}
-		nbyte++;
+		if (s[i] == accept[j])
+			nbyte++;
+		else
+			break;
 	}
 	return (nbyte);
 }
