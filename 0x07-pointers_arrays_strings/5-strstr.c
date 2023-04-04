@@ -13,14 +13,12 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int len_s, len_accept, i, j;
+	int i, j;
 	char *occur;
 
-	len_s = strlen(haystack);
-	len_accept = strlen(needle);
-	for (i = 0; i < len_s; i++)
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		for (j =  0; j < len_accept; j++)
+		for (j =  0; needle[j] != '\0'; j++)
 		{
 			if (haystack[i] == needle[j])
 			{
