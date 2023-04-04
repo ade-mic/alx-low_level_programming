@@ -13,8 +13,10 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j;
+	int i, j, len_needle;
 	char *occur;
+
+	len_needle = strlen(needle);
 
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
@@ -27,9 +29,9 @@ char *_strstr(char *haystack, char *needle)
 			else
 				break;
 		}
-		if (haystack[i + j] == needle[j])
+		if (haystack[i + len_needle] == needle[j])
 		{
-			occur = &haystack[i];
+			occur = &haystack[i + len_needle];
 			return (occur);
 		}
 		else
