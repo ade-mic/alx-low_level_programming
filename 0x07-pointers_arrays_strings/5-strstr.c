@@ -24,12 +24,16 @@ char *_strstr(char *haystack, char *needle)
 			{
 				continue;
 			}
+			else
+				break;
 		}
 		if (haystack[i + j] == needle[j])
 		{
 			occur = &haystack[i];
 			return (occur);
 		}
+		else
+			continue;
 	}
 	return (NULL);
 }
