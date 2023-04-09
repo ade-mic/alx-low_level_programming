@@ -1,0 +1,1 @@
+2-strchr.c:31:1: error: control reaches end of non-void function [-Werror=return-type]
