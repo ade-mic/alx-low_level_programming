@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
  * main - Entry to the C program
  * @argc: the size of arguements array
@@ -27,9 +28,9 @@ int main(int argc, char *argv[])
 			else
 			{
 				add += atoi(argv[i]);
+				printf("%d\n", add);
 			}
 		}
-		printf("%d\n", add);
 	}
 	return (0);
 }
