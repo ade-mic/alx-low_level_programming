@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+
+int change(int cent);
+
 /**
  * main - Entry to the C program
  * @argc: the size of arguements array
  * @argv: arguement array
  * Return: 0 for success and any other digit for error
  */
-int change (int cent);
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +21,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	cent = atoi(argv[1]);
-	printf("%d\n",change(cent));
+	printf("%d\n", change(cent));
 	return (0);
 }
 
@@ -49,8 +51,7 @@ int change(int cent)
 			}
 			else if (cent / change_arr[i] >= 1)
 			{
-				count_c = (cent / change_arr[i]) \
-					+ change(cent % change_arr[i]);
+				count_c = (cent / change_arr[i]) + change(cent % change_arr[i]);
 				return (count_c);
 			}
 		}
