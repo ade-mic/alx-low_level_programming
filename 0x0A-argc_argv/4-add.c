@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 /**
  * main - Entry to the C program
  * @argc: the size of arguements array
  * @argv: arguement array
  * Return: 0 for success and any other digit for error
  */
+int isNumber(char *s);
+
 int main(int argc, char *argv[])
 {
 	int i, add;
@@ -20,7 +23,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (!(atoi(argv[i])))
+			if (!(isNumber(argv[i])))
 			{
 				printf("Error\n");
 				return (1);
@@ -33,4 +36,22 @@ int main(int argc, char *argv[])
 		printf("%d\n", add);
 	}
 	return (0);
+}
+/**
+ * isNumber: check if a string is a number
+ * @s: string
+ * Return: 0 on success
+ */
+int isNumber(char *s)
+{
+	int i;
+
+	i = strlen(s);
+	while (i--)
+	{
+		if(s[i] >= '0' && s[i] <= '9')
+			continue;
+		return (0);
+	}
+	return (1);
 }
