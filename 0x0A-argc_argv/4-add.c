@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+
+int isNumber(char *s);
 /**
  * main - Entry to the C program
  * @argc: the size of arguements array
  * @argv: arguement array
  * Return: 0 for success and any other digit for error
  */
-int isNumber(char *s);
 
 int main(int argc, char *argv[])
 {
@@ -37,11 +38,13 @@ int main(int argc, char *argv[])
 	}
 	return (0);
 }
+
 /**
- * isNumber: check if a string is a number
+ * isNumber - check if a string is a number then return 0 if true
  * @s: string
  * Return: 0 on success
  */
+
 int isNumber(char *s)
 {
 	int i;
@@ -49,7 +52,7 @@ int isNumber(char *s)
 	i = strlen(s);
 	while (i--)
 	{
-		if(s[i] >= '0' && s[i] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 			continue;
 		return (0);
 	}
