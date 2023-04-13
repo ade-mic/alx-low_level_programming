@@ -31,5 +31,6 @@ int **alloc_grid(int width, int height)
 		}
 		mal2[i] = mal1;
 	}
+	free(mal2)
 	return (mal2);
 }
