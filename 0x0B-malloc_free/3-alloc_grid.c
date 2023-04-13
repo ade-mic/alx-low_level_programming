@@ -19,18 +19,23 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	mal2 = malloc(height * sizeof(mal1));
 	if (!mal2)
+	{
+		free(mal2);
 		return (NULL);
+	}
 	for (i = 0; i < height; i++)
 	{
 		mal1 = malloc(width * sizeof(int));
 		if (!mal1)
+		{
+			free(mal1);
 			return (NULL);
+		}
 		for (j = 0; j < width; j++)
 		{
 			mal1[j] = 0;
 		}
 		mal2[i] = mal1;
 	}
-	free(mal2)
 	return (mal2);
 }
