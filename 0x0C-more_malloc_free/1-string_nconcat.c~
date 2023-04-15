@@ -9,7 +9,7 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *mem; 
+	char *mem;
 	unsigned int n1, n2, i;
 
 	/* check string */
@@ -41,5 +41,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		mem[i + n1] = s2[i];
 	}
+	mem[n1+n2] = '\0';
 	return (mem);
 }
