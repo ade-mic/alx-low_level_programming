@@ -21,7 +21,7 @@ char *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; i < nmemb; i++)
 	{
 		/* Assign 0 to allocated memory */
-		mem[i] = NULL;
+		mem[i] = 0;
 	}
 	return (mem);
 }
