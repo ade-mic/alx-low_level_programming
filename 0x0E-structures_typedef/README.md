@@ -1,1 +1,0 @@
-struct files and typedef exercise

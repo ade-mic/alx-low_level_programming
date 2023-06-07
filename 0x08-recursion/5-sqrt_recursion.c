@@ -10,17 +10,19 @@
 
 int _sqrt_recursion(int n)
 {
-	int i, result;
+	int start, end, mid, ans;
 
-	i = 1;
-	if (n < 0)
-		return (-1);
-	if (n == 0 || n == 1)
-		return n;
-	while (result <= i)
-	{
-		i++;
-		result = i * i;
-	}
-	return (i - 1);
+	start = 0;
+	end = n;
+	while (start <= end) {
+		mid = (start + end) / 2;
+
+		// If number is perfect square
+		// then break
+		if (mid * mid == n) {
+			ans = mid;
+			return ans;
+		}
+		else if ( mid  mid < n) {
+			ans
 }
