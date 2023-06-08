@@ -16,7 +16,7 @@ int is_prime_recursive(int n, int divisor)
 	else if (divisor == 1)
 		return (1);
 	else if (n % divisor == 0)
-		return 0;
+		return (0);
 	return (is_prime_recursive(n, divisor - 1));
 }
 
@@ -29,11 +29,5 @@ int is_prime_recursive(int n, int divisor)
 
 int is_prime_number(int n)
 {
-	/*int divisor;
-	float sqrt_num;
-
-	sqrt_num = n;
-	divisor = (int) sqrtf(sqrt_num);
-	*/
 	return (is_prime_recursive(n, n - 1));
 }
