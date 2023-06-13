@@ -9,7 +9,8 @@
  * @s2: string 2
  *
  * Return: pointer to a newly allocated space in memory which
- * contains the contents of s1, followed by the contents of s2, and null terminated
+ * contains the contents of s1, followed by the contents of s2, and null
+ * terminated
  */
 char *str_concat(char *s1, char *s2)
 {
@@ -21,19 +22,17 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 
-	p = malloc((strlen(s1) * sizeof(s1)) + (strlen(s2) * sizeof(s2)));
+	p = malloc((strlen(s1) * sizeof(char)) + (strlen(s2) * sizeof(char)));
 
 	if (p == NULL)
 		return (NULL);
 
+	for (j = 0; j < strlen(s1); j++)
+		p[j] = s1[j];
+
 	for (i = 0; i < strlen(s2); i++)
-	{
-		for (j = 0; j < strlen(s1); j++)
-		{
-			p[j] = s1[j];
-		}
 		p[j + i] = s2[i];
-	}
+	
 	p[i+j] = '\0';
 	return (p);
 }
