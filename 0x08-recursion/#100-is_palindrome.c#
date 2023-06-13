@@ -1,0 +1,37 @@
+#include <String.h>
+/**
+ * first_character - first char of string
+ * @s: string
+ * Return: first char
+ */
+char first_character(char *s)
+{
+	return (s[0]);
+}
+[1;2B/**
+ * last_character - last char of string
+ * @s: string
+ * Return: first char
+ */
+char last_character(char *s)
+{
+	int len;
+
+	len = strlen(s);
+	return (s[len - 1]);
+}
+
+/**
+ * middle_character - return middle string
+ * @s: string
+ * Return: middle char
+ */
+ char middle_character(char *s)
+ {
+	 int len;
+	 str
+/**
+ * is_palindrome - check for palindrome
+ * @s: string to check
+ * Return: 1 id string is palindrome else 0
+ */
