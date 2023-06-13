@@ -7,7 +7,8 @@
  * _strdup - returns a pointer to a new string which is a duplicate of str
  * @str: string to duplicate
  *
- * Return: duplicate of the sting obtained with malloc and can be free with free
+ * Return: duplicate of the sting obtained with malloc and can be free
+ * with free
  */
 char *_strdup(char *str)
 {
@@ -17,7 +18,7 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	p = malloc(strlen(str) * sizeof(str));
+	p = malloc(strlen(str) * sizeof(char));
 
 	if (p == NULL)
 		return (NULL);
