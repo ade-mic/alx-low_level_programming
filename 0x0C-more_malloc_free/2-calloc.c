@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdlib.h>
 #include <string.h>
 /**
@@ -6,7 +7,7 @@
  * @size: string 2
  * Return: pointer to new memory allocation
  */
-char *_calloc(unsigned int nmemb, unsigned int size)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *mem;
 	unsigned int i;
