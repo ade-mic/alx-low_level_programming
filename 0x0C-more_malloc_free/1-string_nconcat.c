@@ -33,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (s1[i] == '\0')
 		{
 			mem[i] = s2[0];
-			for (j = 1; j <= n; j++)
+			for (j = 1; j < n; j++)
 				mem[i + j] = s2[j];
 		}
 	}
