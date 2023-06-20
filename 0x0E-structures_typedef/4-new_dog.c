@@ -9,18 +9,16 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	dog_t *new;
+
 	if (!name)
 		return (NULL);
-	else
-	{
-		dog_t *new;
+	new = malloc(sizeof(struct dog));
+	if (!new)
+		return (NULL);
 
-		new = malloc(sizeof(dog_t));
-		if (!new)
-			return (NULL);
-		new->name = name;
-		new->age = age;
-		new->owner = owner;
-		return (new);
-	}
+	new->name = name;
+	new->age = age;
+	new->owner = owner;
+	return (new);
 }
