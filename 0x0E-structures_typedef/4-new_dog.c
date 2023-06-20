@@ -9,7 +9,9 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	if (name)
+	if (!name)
+		return (NULL);
+	else
 	{
 		dog_t *new;
 
@@ -21,6 +23,4 @@ dog_t *new_dog(char *name, float age, char *owner)
 		new->owner = owner;
 		return (new);
 	}
-	else
-		return (NULL);
 }
