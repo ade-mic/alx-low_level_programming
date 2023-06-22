@@ -16,9 +16,12 @@ int main(int argc, char *argv[])
 	int num1, num2, result;
 	char *operator;
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-	operator = argv[2];
+	if (argv[1] && argv[2] && argv[3])
+	{
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[3]);
+		operator = argv[2];
+	}
 
 
 	if (argc != 4)
