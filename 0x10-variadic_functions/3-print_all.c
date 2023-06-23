@@ -36,7 +36,7 @@ void print_all(const char *const format, ...)
 				printf("%s", s);
 				break;
 			}
-			while (n < len - 1 &&
+			while (n < len &&
 			       (format[n] == 'i' || format[n] == 'c' ||
 				format[n] == 'f' || format[n] == 's'))
 			{
