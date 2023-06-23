@@ -36,7 +36,7 @@ void print_all(const char *const format, ...)
 				printf("%s", s);
 				break;
 			}
-			while (n < len &&
+			while (n < len - 1 &&
 			       (format[n] == 'i' || format[n] == 'c' ||
 				format[n] == 'f' || format[n] == 's'))
 			{
@@ -45,7 +45,7 @@ void print_all(const char *const format, ...)
 			}
 			n++;
 		}
-		printf("\n");
+		printf(" \n");
 		va_end(args);
 	}
 }
