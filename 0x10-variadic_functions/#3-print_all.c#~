@@ -19,9 +19,9 @@ void print_all(const char *const format, ...)
 	n = 0;
 	if (format)
 	{
-		while (n < len)
+		while (format[n])
 		{
-			switch (format[n])
+			switch (format[i])
 			{
 			     case 'c':
 				     c = (char) va_arg(args, int);
@@ -36,21 +36,9 @@ void print_all(const char *const format, ...)
 				     printf("%f", f);
 				     break;
 			     case 's':
-				     s = va_arg(args, char *);
+				     s = va_arg(arg, char *);
 				     if (s == NULL)
 					     printf("(nil)");
 				     else
-					     printf("%s", s);
-				     break;
-			}
-			while(n < len - 1 && (format[n] == 'i' || format[n] == 'c' || \
-					      format[n] == 'f' || format[n] == 's'))
-			{
-			      printf(", ");
-			      break;
-			}
-			n++;
-		}
-		printf("\n");
-	}
-}
+					     prinf("%s", s);
+				     default
