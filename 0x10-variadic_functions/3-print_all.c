@@ -3,24 +3,20 @@
 #include <string.h>
 /**
  * print_all - print anything
- *
  * @format: list of types of arguement passed
  * Return: Nothing
  */
-
 void print_all(const char *const format, ...)
 {
 	char c;
-	int i;
+	int i, n, len;
 	float f;
 	char *s; /** string */
-	int n,len; /** to iterate through format */
 	va_list args;
 
 	va_start(args, format);
 	len = strlen(format);
 	n = 0;
-
 	while (n < len)
 	{
 		if (format[n] == 'c')
@@ -46,8 +42,7 @@ void print_all(const char *const format, ...)
 			else
 				printf("%s", s);
 		}
-		while (n < len - 1 && ( format[n] == 'c' || format[n] == 'i' ||\
-					format[n] == 'f' || format[n] == 's'))
+		while (n < len - 1 && (format[n] == 'c' || format[n] == 'i' || format[n] == 'f' || format[n] == 's'))
 		{
 			printf(", ");
 			break;
