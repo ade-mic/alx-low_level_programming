@@ -38,7 +38,8 @@ void print_all(const char *const format, ...)
 			}
 			while (n < len - 1 &&
 			       (format[n] == 'i' || format[n] == 'c' ||
-				format[n] == 'f' || format[n] == 's'))
+				format[n] == 'f' || (format[n] == 's' ||
+						     format == "(nill)")))
 			{
 				printf(", ");
 				break;
