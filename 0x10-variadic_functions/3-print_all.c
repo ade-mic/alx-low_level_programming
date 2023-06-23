@@ -31,9 +31,9 @@ void print_all(const char *const format, ...)
 				break;
 			case 's':
 				s = va_arg(args, char *);
-				printf("%s", s);
 				if (!s)
-					printf("(nil)");
+					s = "(nil)";
+				printf("%s", s);
 				break;
 			}
 			while (n < len - 1 &&
