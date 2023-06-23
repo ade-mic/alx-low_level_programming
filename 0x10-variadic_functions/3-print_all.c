@@ -37,7 +37,7 @@ void print_all(const char *const format, ...)
 				break;
 			default:
 				n++;
-				continue
+				continue;
 			}
 			while (n < len - 1 &&
 			       (format[n] == 'i' || format[n] == 'c' ||
