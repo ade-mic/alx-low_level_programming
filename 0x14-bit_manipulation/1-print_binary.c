@@ -14,23 +14,20 @@ void print_binary(unsigned long int n)
 	int skip = 0;
 
 	if (n == 0)
-		putchar(n + '0');
-	else
+		_putchar(0 + '0');
+	mask = 1 << (sizeof(unsigned int) * 8 - 1);
+	while (mask > 0)
 	{
-		mask = 1 << (sizeof(unsigned int) * 8 - 1);
-		while (mask > 0)
+		if (n & mask)
 		{
-			if (n & mask)
-			{
-				skip = 1;
-				_putchar(1 + '0');
-			}
-			else
-			{
-				if (skip)
-					_putchar('0');
-			}
-			mask >>= 1;
+			skip = 1;
+			_putchar(1 + '0');
 		}
+		else
+		{
+			if (skip)
+				_putchar('0');
+		}
+		mask >>= 1;
 	}
 }
