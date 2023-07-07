@@ -18,7 +18,7 @@ void print_binary(unsigned long int n)
 	else
 	{
 		mask = 1 << (sizeof(unsigned int) * 8 - 1);
-		while (mask > 0)
+		while (mask > 0 && n > 0)
 		{
 			if (n & mask)
 			{
