@@ -6,17 +6,19 @@
  *
  * Return: the value of the bit at index index or -1 if an error eccured
  */
-int get_bit (unsigned long int n, unsigned int index)
+int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int mask;
 	unsigned int  bit;
 
-	if (index == 0)
-		return(0);
-	if(index)
+
+	if (n)
 	{
 		mask = 1 << index;
-		bit = (mask & n) ? 1 : 0;
+		if (index == 0)
+			bit = 0;
+		else
+			bit = (mask & n) ? 1 : 0;
 		return (bit);
 	}
 	return (-1);
