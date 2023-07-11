@@ -57,13 +57,13 @@ int main(int argc, char *argv[])
 	char buffer[BUFFER_SIZE];
 	ssize_t nb_read, nb_written;
 
-	if (argc !=3)
+	if (argc != 3)
 		error_usage("cp file_from file_to", 97);
 	file_from = argv[1];
 	file_to = argv[2];
 
 	fd_from = open(file_from, O_RDONLY);
-	if(fd_from == -1)
+	if (fd_from == -1)
 		error_fn("Error: Can't read from file", file_from, 98);
 
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 		nb_written = write(fd_to, buffer, nb_read);
 		if (nb_written == -1)
 			error_fn("Error: Can't write to", file_to, 99);
-		if(nb_written != nb_read)
+		if (nb_written != nb_read)
 			error_fn("Error: Cant't write to", file_to,  99);
 	}
 	if (nb_read == -1)
