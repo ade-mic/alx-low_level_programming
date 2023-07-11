@@ -5,8 +5,6 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#define BUFFER_SIZE 1024
-
 /**
  * error_usage - prints usage error to the console
  * @error_message: error message
@@ -52,9 +50,9 @@ void error_close(const char *error_message, int fd, int exit_code)
  */
 int main(int argc, char *argv[])
 {
-	char *file_from, *file_to;
-	int fd_from, fd_to;
-	char buffer[BUFFER_SIZE];
+	const char *file_from, *file_to;
+	int fd_from, fd_to, close_from, close_to;
+	char buffer[1024];
 	ssize_t nb_read, nb_written;
 
 	if (argc != 3)
@@ -66,25 +64,28 @@ int main(int argc, char *argv[])
 	if (fd_from == -1)
 		error_fn("Error: Can't read from file", file_from, 98);
 
-	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0640);
 	if (fd_to == -1)
 		error_fn("Error: Can't write to", file_to, 99);
 
-	while ((nb_read = read(fd_from, buffer, BUFFER_SIZE) > 0))
+
+	do
 	{
+		nb_read = read(fd_from, buffer, 1024);
 		nb_written = write(fd_to, buffer, nb_read);
 		if (nb_written == -1)
 			error_fn("Error: Can't write to", file_to, 99);
 		if (nb_written != nb_read)
 			error_fn("Error: Cant't write to", file_to,  99);
-	}
+	} while (nb_read == 1024);
 	if (nb_read == -1)
 		error_fn("Error: Can't read from file", file_from, 98);
-	if (close(fd_from) == -1)
+
+	close_from = close(fd_from);
+	close_to = close(fd_to);
+	if (close_from == -1)
 		error_close("Error: Can't close", fd_from, 100);
-	if (close(fd_to) == -1)
+	if (close_to == -1)
 		error_close("Error: Cant't close fd_to", fd_to, 100);
-	close(fd_from);
-	close(fd_to);
 	return (0);
 }
