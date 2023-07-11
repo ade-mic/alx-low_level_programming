@@ -32,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	tb_read = letters;
 	nb_read = 0;
-	while(nb_read < tb_read)
+	while(nb_read <= tb_read)
 	{
 		b_read = read(fd, (temp + nb_read), 1);
 		if (b_read == -1)
