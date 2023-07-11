@@ -7,9 +7,9 @@
  *
  * Return: the acutal number of letters it should read and print
  **/
-size_t read_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t nb_read;
+	ssize_t nb_read, tb_read, b_read;
 	ssize_t nb_write; /** function read return value */
 	int fd;    /** file descriptor */
 	char *temp; /** temporarily stored the read character **/
@@ -22,7 +22,7 @@ size_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 		return (0);
 
-	temp = malloc(buffsize + 2);
+	temp = malloc(buffsize);
 	if (temp == NULL)
 	{
 		free(temp);
@@ -30,16 +30,25 @@ size_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	nb_read = read(fd, temp, letters);
-	if (nb_read < 0)
+	tb_read = letters;
+	nb_read = 0;
+	while(nb_read < tb_read)
 	{
-		close(fd);
-		free(temp);
-		return (0);
+		b_read = read(fd, (temp + nb_read), 1);
+		if (b_read == -1)
+		{
+			close(fd);
+			free(temp);
+			return (0);
+		}
+		if (b_read == 0)
+			break;
+		nb_read += b_read;
 	}
+
 	temp[nb_read] = '\0';
 	nb_write = write(1, temp, nb_read);
-	if (nb_write != nb_read)
+	if (nb_read != nb_write)
 	{
 		free(temp);
 		close(fd);
