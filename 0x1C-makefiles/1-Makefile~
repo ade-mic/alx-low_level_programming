@@ -1,0 +1,5 @@
+# define the variables
+CC = gcc
+SRC = main.c schoo.c
+all: $(SRC)
+	$(CC) $(SRC) -o school
