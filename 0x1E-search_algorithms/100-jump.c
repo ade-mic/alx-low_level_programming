@@ -30,11 +30,11 @@ int jump_search(int *array, size_t size, int value)
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 		prev = next;
 		next += step;
-		if (next > size)
-			next = size;
 	}
-	printf("Value found between indexes [%ld] and [%ld]\n",\
+	printf("Value found between indexes [%ld] and [%ld]\n",
 	       prev - step, next - step);
+	if (next > size)
+		next = size;
 	/** a linear search for x in block begining with prev */
 	for  (i = prev - step; i < next; i++)
 	{
